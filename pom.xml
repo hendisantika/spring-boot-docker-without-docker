@@ -16,6 +16,8 @@
     <properties>
         <java.version>23</java.version>
         <start-class>id.my.hendisantika.dockerwithoutdocker.SpringBootDockerWithoutDockerApplication</start-class>
+        <app.image.name>springboot-jib</app.image.name>
+        <app.image.tag/>
     </properties>
     <dependencies>
         <dependency>
