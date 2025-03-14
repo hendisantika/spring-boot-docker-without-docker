@@ -33,8 +33,53 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <imageName>my-spring-boot-image</imageName>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>build-with-fabric-8</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>io.fabric8</groupId>
+                        <artifactId>docker-maven-plugin</artifactId>
+                        <version>0.43.0</version>
+                        <configuration>
+                            <images>
+                                <image>
+                                    <name>${project.name}:${project.version}</name>
+                                    <build>
+                                        <from>openjdk:17</from>
+                                        <assembly>
+                                            <name>build</name>
+                                            <descriptorRef>artifact</descriptorRef>
+                                        </assembly>
+                                        <ports>
+                                            <port>8080</port>
+                                        </ports>
+                                        <cmd>java -jar build/${project.name}-${project.version}.jar</cmd>
+                                    </build>
+                                </image>
+                            </images>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>build-image</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>build</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
