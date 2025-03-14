@@ -15,6 +15,7 @@
     <description>spring-boot-docker-without-docker</description>
     <properties>
         <java.version>23</java.version>
+        <start-class>id.my.hendisantika.dockerwithoutdocker.SpringBootDockerWithoutDockerApplication</start-class>
     </properties>
     <dependencies>
         <dependency>
