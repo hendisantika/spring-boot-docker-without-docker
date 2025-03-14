@@ -20,3 +20,8 @@ I have three mechanisms in the same pom file which are put under different maven
     ```shell
     mvn clean verify -DskipTests -Pbuild-with-jib
     ```
+- Push Image to Docker Hub:
+
+    ```shell
+    mvn clean verify -DskipTests -Pdockerhub
+    ```
