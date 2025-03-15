@@ -111,10 +111,10 @@ jobs:
           sudo chmod 600 ~/.ssh/known_hosts
         shell: bash
         env:
+          SERVER_HOST: ${{ vars.SSH_HOST }}
+          SERVER_PORT: ${{ vars.SSH_PORT }}
           SERVER_USERNAME: ${{ secrets.SSH_USERNAME }}
-          SERVER_PORT: ${{ secrets.SSH_PORT }}
-          SERVER_HOST: ${{ secrets.SSH_HOST }}
-          SSH_PRIVATE_KEY: ${{secrets.SSH_KEY}}
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
           SSH_KNOWN_HOSTS: ${{secrets.SSH_HOST}}
 
       - name: Set all environment variables
