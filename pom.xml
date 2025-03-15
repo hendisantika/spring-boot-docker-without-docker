@@ -10,14 +10,13 @@
     </parent>
     <groupId>id.my.hendisantika</groupId>
     <artifactId>docker-without-docker</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>spring-boot-docker-without-docker</name>
     <description>spring-boot-docker-without-docker</description>
     <properties>
         <java.version>23</java.version>
         <start-class>id.my.hendisantika.dockerwithoutdocker.SpringBootDockerWithoutDockerApplication</start-class>
         <app.image.name>springboot-jib</app.image.name>
-        <app.image.tag/>
     </properties>
     <dependencies>
         <dependency>
@@ -158,7 +157,7 @@
                         <version>3.4.4</version>
                         <configuration>
                             <from>
-                                <image>openjdk:21</image>
+                                <image>amazoncorretto:23-alpine3.21</image>
                             </from>
                             <container>
                                 <ports>
@@ -185,7 +184,7 @@
                                 <phase>package</phase>
                                 <configuration>
                                     <to>
-                                        <image>docker.io/hendisantika/${app.image.name}:${app.image.tag}</image>
+                                        <image>docker.io/hendisantika/${app.image.name}:${project.version}</image>
                                     </to>
                                 </configuration>
                                 <goals>
