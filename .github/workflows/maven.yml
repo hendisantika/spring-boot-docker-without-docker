@@ -146,7 +146,7 @@ jobs:
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ vars.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
+          username: ${{ vars.SSH_USERNAME }}
           key: ${{ vars.SSH_PRIVATE_KEY_VARS }}
           port: ${{ vars.SSH_PORT }}
           source: "./.env"  # Path to the file on your runner
