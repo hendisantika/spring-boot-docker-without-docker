@@ -60,7 +60,7 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.4.4</version>
+                <version>3.4.5</version>
                 <configuration>
                     <from>
                         <image>amazoncorretto:23</image>
@@ -123,7 +123,7 @@
                     <plugin>
                         <groupId>com.google.cloud.tools</groupId>
                         <artifactId>jib-maven-plugin</artifactId>
-                        <version>3.4.4</version>
+                        <version>3.4.5</version>
                         <configuration>
                             <from>
                                 <image>amazoncorretto:23-alpine3.21</image>
@@ -154,7 +154,7 @@
                     <plugin>
                         <groupId>com.google.cloud.tools</groupId>
                         <artifactId>jib-maven-plugin</artifactId>
-                        <version>3.4.4</version>
+                        <version>3.4.5</version>
                         <configuration>
                             <from>
                                 <image>amazoncorretto:23-alpine3.21</image>
