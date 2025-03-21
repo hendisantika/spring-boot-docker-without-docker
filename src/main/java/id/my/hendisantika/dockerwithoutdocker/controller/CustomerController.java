@@ -1,7 +1,12 @@
 package id.my.hendisantika.dockerwithoutdocker.controller;
 
+import id.my.hendisantika.dockerwithoutdocker.mock.MockData;
+import id.my.hendisantika.dockerwithoutdocker.model.Customer;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,4 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "api/v1/customers")
 public class CustomerController {
+    @GetMapping
+    public List<Customer> getAllCustomers() throws Exception {
+        List<Customer> customerList = MockData.getCustomers();
+        return customerList;
+    }
 }
