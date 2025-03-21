@@ -150,7 +150,7 @@ jobs:
           key: ${{ vars.SSH_PRIVATE_KEY_VARS }}
           port: ${{ vars.SSH_PORT }}
           source: "./.env"  # Path to the file on your runner
-          target: "~/spring-boot-jib"  # Target directory on the server
+          target: "~/spring-boot-docker-without-docker"  # Target directory on the server
 
       - name: Run the application
         env:
