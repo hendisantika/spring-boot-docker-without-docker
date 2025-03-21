@@ -14,7 +14,7 @@
     <name>spring-boot-docker-without-docker</name>
     <description>spring-boot-docker-without-docker</description>
     <properties>
-        <java.version>17</java.version>
+        <java.version>24</java.version>
         <start-class>id.my.hendisantika.dockerwithoutdocker.SpringBootDockerWithoutDockerApplication</start-class>
         <app.image.name>springboot-jib</app.image.name>
         <guava.version>23.0</guava.version>
@@ -92,14 +92,17 @@
                 <configuration>
                     <image>
                         <buildpacks>
-                            <buildpack>gcr.io/paketo-buildpacks/amazon-corretto:latest</buildpack>
-                            <buildpack>gcr.io/paketo-buildpacks/ca-certificates:latest</buildpack>
+                            <!--                            <buildpack>gcr.io/paketo-buildpacks/amazon-corretto:latest</buildpack>-->
+                            <!--                            <buildpack>gcr.io/paketo-buildpacks/ca-certificates:latest</buildpack>-->
                             <!--                            <buildpack>gcr.io/paketo-buildpacks/java:latest</buildpack>-->
-                            <buildpack>gcr.io/paketo-buildpacks/microsoft-openjdk</buildpack>
-                            <buildpack>gcr.io/paketo-buildpacks/syft</buildpack>
-                            <buildpack>gcr.io/paketo-buildpacks/executable-jar</buildpack>
-                            <buildpack>gcr.io/paketo-buildpacks/dist-zip</buildpack>
-                            <buildpack>gcr.io/paketo-buildpacks/spring-boot</buildpack>
+                            <!--                            <buildpack>gcr.io/paketo-buildpacks/microsoft-openjdk</buildpack>-->
+                            <!--                            <buildpack>gcr.io/paketo-buildpacks/syft</buildpack>-->
+                            <!--                            <buildpack>gcr.io/paketo-buildpacks/executable-jar</buildpack>-->
+                            <!--                            <buildpack>gcr.io/paketo-buildpacks/dist-zip</buildpack>-->
+                            <!--                            <buildpack>gcr.io/paketo-buildpacks/spring-boot</buildpack>-->
+                            <buildpack>gcr.io/paketo-buildpacks/graalvm</buildpack>
+                            <buildpack>urn:cnb:builder:paketo-buildpacks/java-native-image</buildpack>
+
                         </buildpacks>
                         <name>docker.io/hendisantika/${project.artifactId}:${project.version}</name>
                         <builder>bellsoft/buildpacks.builder:musl</builder>

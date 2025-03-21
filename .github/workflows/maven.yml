@@ -103,7 +103,7 @@ jobs:
 
       - name: Create SSH key
         run: |
-          mkdir ~/spring-boot-jib
+          mkdir ~/spring-boot-docker-without-docker
           mkdir -p ~/.ssh/
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/private.key
           sudo chmod 600 ~/.ssh/private.key
