@@ -30,14 +30,13 @@ public class CustomerController {
         return customerList;
     }
 
-    @GetMapping("maleCustomers")
+    @GetMapping("/male")
     public List<Customer> getMaleCustomers() throws Exception {
         List<Customer> customerList = MockData.getCustomers();
         Predicate<Customer> customerPredicate = customer -> customer.getGender().equals("Male");
 
-        List<Customer> maleCustomers = customerList.stream()
+        return customerList.stream()
                 .filter(customerPredicate)
                 .collect(Collectors.toList());
-        return maleCustomers;
     }
 }

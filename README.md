@@ -35,4 +35,4 @@ I have three mechanisms in the same pom file which are put under different maven
 
 <br/>
 
-> 2nd: https://localhost:8080/api/v1/customers/maleCustomers
+> 2nd: https://localhost:8080/api/v1/customers/male
