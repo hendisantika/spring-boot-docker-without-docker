@@ -25,3 +25,7 @@ I have three mechanisms in the same pom file which are put under different maven
     ```shell
     mvn clean verify -DskipTests -Pdockerhub
     ```
+- Start the container
+  ```shell
+  docker run --name spring-boot-docker-without-docker -p 8080:8080 spring-boot-docker-without-docker:0.0.1
+  ```
