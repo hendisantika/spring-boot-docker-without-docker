@@ -1,5 +1,6 @@
 #!/bin/bash
 ssh -p "${SERVER_PORT}" "${SERVER_USERNAME}"@"${SERVER_HOST}" -i key.txt -t -t -o StrictHostKeyChecking=no << 'ENDSSH'
+mkdir "spring-boot-docker-without-docker"
 cd ~/spring-boot-docker-without-docker
 set +a
 source .env
