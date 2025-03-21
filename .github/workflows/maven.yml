@@ -43,7 +43,7 @@ jobs:
       run: mvn clean verify -Pbuild-with-jib
 
     - name: Build and push
-      run: mvn clean install jib:build -Djib.to.image=hendisantika/springboot-jib:${{ github.run_number }} -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} -Djib.to.auth.password=${{ secrets.DOCKERHUB_TOKEN }}
+      run: mvn clean install jib:build -Djib.to.image=hendisantika/spring-boot-docker-without-docker:${{ github.run_number }} -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} -Djib.to.auth.password=${{ secrets.DOCKERHUB_TOKEN }}
 
       # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
@@ -123,7 +123,7 @@ jobs:
           SERVER_PORT: ${{ vars.SSH_PORT }}
           SERVER_USERNAME: ${{ secrets.SSH_USERNAME }}
           IMAGE_TAG: ${{ github.run_number }}
-          CONTAINER_NAME: spring-boot-jib
+          CONTAINER_NAME: spring-boot-docker-without-docker
 
           APP_SERVER_PORT: ${{ vars.APP_SERVER_PORT_DEV }}
           APP_ENVIRONMENT: ${{ vars.APP_ENVIRONMENT_DEV }}
