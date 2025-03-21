@@ -91,11 +91,11 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <buildpack>gcr.io/paketo-buildpacks/amazon-corretto:latest</buildpack>
-                        <buildpack>gcr.io/paketo-buildpacks/executable-jar:latest</buildpack>
-                        <buildpack>gcr.io/paketo-buildpacks/spring-boot:latest</buildpack>
+                        <!--                        <buildpack>gcr.io/paketo-buildpacks/amazon-corretto:latest</buildpack>-->
+                        <!--                        <buildpack>gcr.io/paketo-buildpacks/executable-jar:latest</buildpack>-->
+                        <!--                        <buildpack>gcr.io/paketo-buildpacks/spring-boot:latest</buildpack>-->
                         <name>docker.io/hendisantika/${project.artifactId}:${project.version}</name>
-                        <builder>bellsoft/buildpacks.builder:musl</builder>
+                        <!--                        <builder>bellsoft/buildpacks.builder:musl</builder>-->
                         <env>
                             <BP_JVM_VERSION>${java.version}</BP_JVM_VERSION>
                         </env>
