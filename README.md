@@ -29,3 +29,10 @@ I have three mechanisms in the same pom file which are put under different maven
   ```shell
   docker run --name spring-boot-docker-without-docker -p 8080:8080 spring-boot-docker-without-docker:0.0.1
   ```
+- APIs for testing :
+
+> 1st: https://localhost:8080/api/v1/customers
+
+<br/>
+
+> 2nd: https://localhost:8080/api/v1/customers/maleCustomers
