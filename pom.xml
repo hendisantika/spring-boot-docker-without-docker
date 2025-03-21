@@ -103,7 +103,6 @@
                     <layers>
                         <enabled>true</enabled>
                     </layers>
-                    <layout>LAYERED_JAR</layout>
                 </configuration>
                 <executions>
                     <execution>
