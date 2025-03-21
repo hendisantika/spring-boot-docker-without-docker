@@ -10,11 +10,11 @@
     </parent>
     <groupId>id.my.hendisantika</groupId>
     <artifactId>docker-without-docker</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <name>spring-boot-docker-without-docker</name>
     <description>spring-boot-docker-without-docker</description>
     <properties>
-        <java.version>23</java.version>
+        <java.version>17</java.version>
         <start-class>id.my.hendisantika.dockerwithoutdocker.SpringBootDockerWithoutDockerApplication</start-class>
         <app.image.name>springboot-jib</app.image.name>
         <guava.version>23.0</guava.version>
@@ -90,8 +90,35 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <imageName>my-spring-boot-image</imageName>
+                    <image>
+                        <buildpacks>
+                            <buildpack>gcr.io/paketo-buildpacks/amazon-corretto:latest</buildpack>
+                            <buildpack>gcr.io/paketo-buildpacks/ca-certificates:latest</buildpack>
+                            <!--                            <buildpack>gcr.io/paketo-buildpacks/java:latest</buildpack>-->
+                            <buildpack>gcr.io/paketo-buildpacks/microsoft-openjdk</buildpack>
+                            <buildpack>gcr.io/paketo-buildpacks/syft</buildpack>
+                            <buildpack>gcr.io/paketo-buildpacks/executable-jar</buildpack>
+                            <buildpack>gcr.io/paketo-buildpacks/dist-zip</buildpack>
+                            <buildpack>gcr.io/paketo-buildpacks/spring-boot</buildpack>
+                        </buildpacks>
+                        <name>docker.io/hendisantika/${project.artifactId}:${project.version}</name>
+                        <builder>bellsoft/buildpacks.builder:musl</builder>
+                        <env>
+                            <BP_JVM_VERSION>${java.version}</BP_JVM_VERSION>
+                        </env>
+                    </image>
+                    <layers>
+                        <enabled>true</enabled>
+                    </layers>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>build-info</id>
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
@@ -138,7 +165,7 @@
                                         <ports>
                                             <port>8080</port>
                                         </ports>
-                                        <cmd>java -jar target/${project.name}-${project.version}.jar</cmd>
+                                        <cmd>java -jar ${project.name}-${project.version}.jar</cmd>
                                     </build>
                                 </image>
                             </images>
@@ -156,7 +183,6 @@
                                 <phase>install</phase>
                                 <goals>
                                     <goal>build</goal>
-                                    <goal>push</goal>
                                 </goals>
                             </execution>
                         </executions>
