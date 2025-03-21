@@ -134,7 +134,7 @@
                                         <ports>
                                             <port>8080</port>
                                         </ports>
-                                        <cmd>java -jar ${project.name}-${project.version}.jar</cmd>
+                                        <cmd>java -jar target/${project.name}-${project.version}.jar</cmd>
                                     </build>
                                 </image>
                             </images>
