@@ -17,11 +17,31 @@
         <java.version>23</java.version>
         <start-class>id.my.hendisantika.dockerwithoutdocker.SpringBootDockerWithoutDockerApplication</start-class>
         <app.image.name>springboot-jib</app.image.name>
+        <guava.version>23.0</guava.version>
+        <gson.version>2.12.1</gson.version>
+        <commons.version>2.18.0</commons.version>
+        <app.image.name>springboot-jib</app.image.name>
+        <app.image.tag/>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
