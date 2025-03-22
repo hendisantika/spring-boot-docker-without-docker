@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
  * Time: 07.41
  * To change this template use File | Settings | File Templates.
  */
+// testing
 @RestController
 @RequestMapping(path = "api/v1/customers")
 public class CustomerController {
