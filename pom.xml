@@ -19,7 +19,7 @@
         <app.image.name>springboot-jib</app.image.name>
         <guava.version>23.0</guava.version>
         <gson.version>2.13.1</gson.version>
-        <commons.version>2.19.0</commons.version>
+        <commons.version>2.20.0</commons.version>
         <app.image.name>spring-boot-docker-without-docker</app.image.name>
         <app.image.tag/>
     </properties>
